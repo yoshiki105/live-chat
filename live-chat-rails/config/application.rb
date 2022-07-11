@@ -36,5 +36,11 @@ module LiveChatRails
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    config.generators do |g|
+			g.helper false      # ヘルパーを生成しない
+			g.assets false      # CSS, JavaScript ファイルを生成しない
+			g.skip_routes true  # config/routes.rb を変更しない
+		end
   end
 end
