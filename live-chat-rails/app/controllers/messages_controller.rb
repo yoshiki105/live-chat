@@ -10,7 +10,8 @@ class MessagesController < ApplicationController
         name: message.user.name,
         content: message.content,
         email: message.user.email,
-        created_at: message.created_at
+        created_at: message.created_at,
+        likes: message.likes.map{{ id: _1.id, email: _1.user.email }}
       }
     end
 
